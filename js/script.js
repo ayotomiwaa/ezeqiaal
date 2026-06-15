@@ -1,8 +1,16 @@
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "links") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector("#primary-navigation");
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+        });
+    });
 }
