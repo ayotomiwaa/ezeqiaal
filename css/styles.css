@@ -254,6 +254,21 @@ p {
     color: var(--paper);
 }
 
+.inline-link {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 0.35rem;
+    color: var(--teal);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(39, 107, 97, 0.28);
+}
+
+.inline-link:hover,
+.inline-link:focus {
+    border-bottom-color: var(--teal);
+}
+
 .profile-panel {
     display: grid;
     gap: 1rem;
